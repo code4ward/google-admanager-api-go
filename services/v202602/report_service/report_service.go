@@ -3334,7 +3334,7 @@ const (
 	// inputted URL parameters. The values of "interstitial" and "no content" are populated
 	// automatically based on the declared inventory type. The video placement dimension only applies
 	// to backfill traffic.
-	// <p>Corresponds to "Video placement (new)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+	// <p>Corresponds to "Video placement" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 	//
 	DimensionVIDEO_PLCMT_NAME Dimension = "VIDEO_PLCMT_NAME"
 
@@ -3678,7 +3678,7 @@ const (
 
 	//
 	// Breaks down reporting data by advertiser domain.
-	// <p>Corresponds to "Advertiser domain" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+	// <p>Corresponds to "Landing page domain" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 	//
 	DimensionADVERTISER_DOMAIN_NAME Dimension = "ADVERTISER_DOMAIN_NAME"
 
@@ -5346,7 +5346,7 @@ type Date struct {
 }
 
 type DateTime struct {
-	Date soap.XSDDate `xml:"date,omitempty" json:"date,omitempty"`
+	Date *Date `xml:"date,omitempty" json:"date,omitempty"`
 
 	Hour int32 `xml:"hour,omitempty" json:"hour,omitempty"`
 
@@ -5362,7 +5362,7 @@ type DateTimeValue struct {
 	//
 	// The {@code DateTime} value.
 	//
-	Value soap.XSDDateTime `xml:"value,omitempty" json:"value,omitempty"`
+	Value *DateTime `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type DateValue struct {
@@ -5370,7 +5370,7 @@ type DateValue struct {
 	//
 	// The {@code Date} value.
 	//
-	Value soap.XSDDate `xml:"value,omitempty" json:"value,omitempty"`
+	Value *Date `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type FeatureError struct {
@@ -5616,14 +5616,14 @@ type ReportQuery struct {
 	// {@code ReportQuery#dateRangeType} field must be set to
 	// {@link DateRangeType#CUSTOM_DATE} in order to use this.
 	//
-	StartDate soap.XSDDate `xml:"startDate,omitempty" json:"startDate,omitempty"`
+	StartDate *Date `xml:"startDate,omitempty" json:"startDate,omitempty"`
 
 	//
 	// The end date up to which the reporting information is gathered. The
 	// {@code ReportQuery#dateRangeType} field must be set to
 	// {@link DateRangeType#CUSTOM_DATE} in order to use this.
 	//
-	EndDate soap.XSDDate `xml:"endDate,omitempty" json:"endDate,omitempty"`
+	EndDate *Date `xml:"endDate,omitempty" json:"endDate,omitempty"`
 
 	//
 	// The period of time for which the reporting data is being generated. In

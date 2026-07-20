@@ -117,118 +117,6 @@ const (
 	AssetError_ReasonUNKNOWN AssetError_Reason = "UNKNOWN"
 )
 
-//
-// Specific audience extension error reasons.
-//
-
-type AudienceExtensionError_Reason string
-
-const (
-
-	//
-	// Frequency caps are not supported by audience extension line items
-	//
-	AudienceExtensionError_ReasonFREQUENCY_CAPS_NOT_SUPPORTED AudienceExtensionError_Reason = "FREQUENCY_CAPS_NOT_SUPPORTED"
-
-	//
-	// Audience extension line items can only target geography
-	//
-	AudienceExtensionError_ReasonINVALID_TARGETING AudienceExtensionError_Reason = "INVALID_TARGETING"
-
-	//
-	// Audience extension line items can only target audience extension inventory units
-	//
-	AudienceExtensionError_ReasonINVENTORY_UNIT_TARGETING_INVALID AudienceExtensionError_Reason = "INVENTORY_UNIT_TARGETING_INVALID"
-
-	//
-	// Audience extension line items do not support {@link CreativeRotationType#SEQUENTIAL}.
-	//
-	AudienceExtensionError_ReasonINVALID_CREATIVE_ROTATION AudienceExtensionError_Reason = "INVALID_CREATIVE_ROTATION"
-
-	//
-	// The given ID of the external entity is not valid
-	//
-	AudienceExtensionError_ReasonINVALID_EXTERNAL_ENTITY_ID AudienceExtensionError_Reason = "INVALID_EXTERNAL_ENTITY_ID"
-
-	//
-	// Audience extension line items only support {@link LineItemType#STANDARD}.
-	//
-	AudienceExtensionError_ReasonINVALID_LINE_ITEM_TYPE AudienceExtensionError_Reason = "INVALID_LINE_ITEM_TYPE"
-
-	//
-	// Audience extension max bid is invalid when it is greater then the max budget.
-	//
-	AudienceExtensionError_ReasonINVALID_MAX_BID AudienceExtensionError_Reason = "INVALID_MAX_BID"
-
-	//
-	// Bulk update for audience extension line items is not allowed.
-	//
-	AudienceExtensionError_ReasonAUDIENCE_EXTENSION_BULK_UPDATE_NOT_ALLOWED AudienceExtensionError_Reason = "AUDIENCE_EXTENSION_BULK_UPDATE_NOT_ALLOWED"
-
-	//
-	// An unexpected error occurred.
-	//
-	AudienceExtensionError_ReasonUNEXPECTED_AUDIENCE_EXTENSION_ERROR AudienceExtensionError_Reason = "UNEXPECTED_AUDIENCE_EXTENSION_ERROR"
-
-	//
-	// The value entered for the maximum daily budget on an audience extension line item exceeds
-	// the maximum allowed.
-	//
-	AudienceExtensionError_ReasonMAX_DAILY_BUDGET_AMOUNT_EXCEEDED AudienceExtensionError_Reason = "MAX_DAILY_BUDGET_AMOUNT_EXCEEDED"
-
-	//
-	// Creating a campaign for a line item that already has an associated campaign is not allowed.
-	//
-	AudienceExtensionError_ReasonEXTERNAL_CAMPAIGN_ALREADY_EXISTS AudienceExtensionError_Reason = "EXTERNAL_CAMPAIGN_ALREADY_EXISTS"
-
-	//
-	// Audience extension was specified on a line item but the feature was not
-	// enabled.
-	//
-	AudienceExtensionError_ReasonAUDIENCE_EXTENSION_WITHOUT_FEATURE AudienceExtensionError_Reason = "AUDIENCE_EXTENSION_WITHOUT_FEATURE"
-
-	//
-	// Audience extension was specified on a line item but no audience extension account has
-	// been linked.
-	//
-	AudienceExtensionError_ReasonAUDIENCE_EXTENSION_WITHOUT_LINKED_ACCOUNT AudienceExtensionError_Reason = "AUDIENCE_EXTENSION_WITHOUT_LINKED_ACCOUNT"
-
-	//
-	// Assocation creative size overrides are not allowed with audience extension.
-	//
-	AudienceExtensionError_ReasonCANNOT_OVERRIDE_CREATIVE_SIZE_WITH_AUDIENCE_EXTENSION AudienceExtensionError_Reason = "CANNOT_OVERRIDE_CREATIVE_SIZE_WITH_AUDIENCE_EXTENSION"
-
-	//
-	// Some association overrides are not allowed with audience extension.
-	//
-	AudienceExtensionError_ReasonCANNOT_OVERRIDE_FIELD_WITH_AUDIENCE_EXTENSION AudienceExtensionError_Reason = "CANNOT_OVERRIDE_FIELD_WITH_AUDIENCE_EXTENSION"
-
-	//
-	// Only one creative placeholder is allowed for an audience extension line item.
-	//
-	AudienceExtensionError_ReasonONLY_ONE_CREATIVE_PLACEHOLDER_ALLOWED AudienceExtensionError_Reason = "ONLY_ONE_CREATIVE_PLACEHOLDER_ALLOWED"
-
-	//
-	// Only one audience extension line item can be associated with a given order.
-	//
-	AudienceExtensionError_ReasonMULTIPLE_AUDIENCE_EXTENSION_LINE_ITEMS_ON_ORDER AudienceExtensionError_Reason = "MULTIPLE_AUDIENCE_EXTENSION_LINE_ITEMS_ON_ORDER"
-
-	//
-	// Audience extension line items must be copied separately from their associated creatives.
-	//
-	AudienceExtensionError_ReasonCANNOT_COPY_AUDIENCE_EXTENSION_LINE_ITEMS_AND_CREATIVES_TOGETHER AudienceExtensionError_Reason = "CANNOT_COPY_AUDIENCE_EXTENSION_LINE_ITEMS_AND_CREATIVES_TOGETHER"
-
-	//
-	// Audience extension is no longer supported and cannot be used.
-	//
-	AudienceExtensionError_ReasonFEATURE_DEPRECATED AudienceExtensionError_Reason = "FEATURE_DEPRECATED"
-
-	//
-	// The value returned if the actual value is not exposed by the requested API version.
-	//
-	AudienceExtensionError_ReasonUNKNOWN AudienceExtensionError_Reason = "UNKNOWN"
-)
-
 type AuthenticationError_Reason string
 
 const (
@@ -3312,8 +3200,7 @@ const (
 	LineItemTypePREFERRED_DEAL LineItemType = "PREFERRED_DEAL"
 
 	//
-	// The value returned if the actual value is not exposed by the requested API
-	// version.
+	// The value returned if the actual value is not exposed by the requested API version.
 	//
 	LineItemTypeUNKNOWN LineItemType = "UNKNOWN"
 )
@@ -3881,6 +3768,26 @@ const (
 	// The value returned if the actual value is not exposed by the requested API version.
 	//
 	RegExError_ReasonUNKNOWN RegExError_Reason = "UNKNOWN"
+)
+
+type RequestError_Reason string
+
+const (
+
+	//
+	// Error reason is unknown.
+	//
+	RequestError_ReasonUNKNOWN RequestError_Reason = "UNKNOWN"
+
+	//
+	// Invalid input.
+	//
+	RequestError_ReasonINVALID_INPUT RequestError_Reason = "INVALID_INPUT"
+
+	//
+	// The api version in the request has been discontinued. Please update to a newer API version.
+	//
+	RequestError_ReasonUNSUPPORTED_VERSION RequestError_Reason = "UNSUPPORTED_VERSION"
 )
 
 //
@@ -5273,15 +5180,6 @@ type AssetError struct {
 	Reason *AssetError_Reason `xml:"reason,omitempty" json:"reason,omitempty"`
 }
 
-type AudienceExtensionError struct {
-	*ApiError
-
-	//
-	// The error reason represented by an enum.
-	//
-	Reason *AudienceExtensionError_Reason `xml:"reason,omitempty" json:"reason,omitempty"`
-}
-
 type AuthenticationError struct {
 	*ApiError
 
@@ -5620,7 +5518,7 @@ type CustomPacingGoal struct {
 	// The start date and time of the goal. This field is required unless {@code
 	// useLineItemStartDateTime} is true.
 	//
-	StartDateTime soap.XSDDateTime `xml:"startDateTime,omitempty" json:"startDateTime,omitempty"`
+	StartDateTime *DateTime `xml:"startDateTime,omitempty" json:"startDateTime,omitempty"`
 
 	//
 	// Whether the {@link LineItem#startDateTime} should be used for the start date and time of this
@@ -5694,7 +5592,7 @@ type Date struct {
 }
 
 type DateTime struct {
-	Date soap.XSDDate `xml:"date,omitempty" json:"date,omitempty"`
+	Date *Date `xml:"date,omitempty" json:"date,omitempty"`
 
 	Hour int32 `xml:"hour,omitempty" json:"hour,omitempty"`
 
@@ -5712,14 +5610,14 @@ type DateTimeRange struct {
 	// lower bound on the date time range. If this field is not set then {@code endDateTime} must be
 	// specified.
 	//
-	StartDateTime soap.XSDDateTime `xml:"startDateTime,omitempty" json:"startDateTime,omitempty"`
+	StartDateTime *DateTime `xml:"startDateTime,omitempty" json:"startDateTime,omitempty"`
 
 	//
 	// The end date time of this range. This field is optional and if it is not set then there is no
 	// upper bound on the date time range. If this field is not set then {@code startDateTime} must be
 	// specified.
 	//
-	EndDateTime soap.XSDDateTime `xml:"endDateTime,omitempty" json:"endDateTime,omitempty"`
+	EndDateTime *DateTime `xml:"endDateTime,omitempty" json:"endDateTime,omitempty"`
 }
 
 type DateTimeRangeTargeting struct {
@@ -5740,7 +5638,7 @@ type DateTimeValue struct {
 	//
 	// The {@code DateTime} value.
 	//
-	Value soap.XSDDateTime `xml:"value,omitempty" json:"value,omitempty"`
+	Value *DateTime `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type DateValue struct {
@@ -5748,7 +5646,7 @@ type DateValue struct {
 	//
 	// The {@code Date} value.
 	//
-	Value soap.XSDDate `xml:"value,omitempty" json:"value,omitempty"`
+	Value *Date `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type DayPart struct {
@@ -6304,7 +6202,7 @@ type LineItemSummary struct {
 	// The date and time on which the {@code LineItem} is enabled to begin serving. This attribute is
 	// required and must be in the future.
 	//
-	StartDateTime soap.XSDDateTime `xml:"startDateTime,omitempty" json:"startDateTime,omitempty"`
+	StartDateTime *DateTime `xml:"startDateTime,omitempty" json:"startDateTime,omitempty"`
 
 	//
 	// Specifies whether to start serving to the {@code LineItem} right away, in an hour, etc. This
@@ -6318,7 +6216,7 @@ type LineItemSummary struct {
 	// after the {@link LineItem#startDateTime}. This end date and time does not include auto
 	// extension days.
 	//
-	EndDateTime soap.XSDDateTime `xml:"endDateTime,omitempty" json:"endDateTime,omitempty"`
+	EndDateTime *DateTime `xml:"endDateTime,omitempty" json:"endDateTime,omitempty"`
 
 	//
 	// The number of days to allow a line item to deliver past its {@link #endDateTime}. A maximum of
@@ -6673,12 +6571,12 @@ type LineItemSummary struct {
 	//
 	// The date and time this line item was last modified. This attribute is read only.
 	//
-	LastModifiedDateTime soap.XSDDateTime `xml:"lastModifiedDateTime,omitempty" json:"lastModifiedDateTime,omitempty"`
+	LastModifiedDateTime *DateTime `xml:"lastModifiedDateTime,omitempty" json:"lastModifiedDateTime,omitempty"`
 
 	//
 	// This attribute may be {@code null} for line items created before this feature was introduced.
 	//
-	CreationDateTime soap.XSDDateTime `xml:"creationDateTime,omitempty" json:"creationDateTime,omitempty"`
+	CreationDateTime *DateTime `xml:"creationDateTime,omitempty" json:"creationDateTime,omitempty"`
 
 	//
 	// The values of the custom fields associated with this line item.
@@ -7070,6 +6968,12 @@ type RegExError struct {
 
 type ReleaseLineItems struct {
 	*LineItemAction
+}
+
+type RequestError struct {
+	*ApiError
+
+	Reason *RequestError_Reason `xml:"reason,omitempty" json:"reason,omitempty"`
 }
 
 type RequestPlatformTargeting struct {

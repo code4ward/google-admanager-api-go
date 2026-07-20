@@ -3490,7 +3490,7 @@ type Creative struct {
 	//
 	// The date and time this creative was last modified.
 	//
-	LastModifiedDateTime soap.XSDDateTime `xml:"lastModifiedDateTime,omitempty" json:"lastModifiedDateTime,omitempty"`
+	LastModifiedDateTime *DateTime `xml:"lastModifiedDateTime,omitempty" json:"lastModifiedDateTime,omitempty"`
 
 	//
 	// The values of the custom fields associated with this creative.
@@ -3680,7 +3680,7 @@ type Date struct {
 }
 
 type DateTime struct {
-	Date soap.XSDDate `xml:"date,omitempty" json:"date,omitempty"`
+	Date *Date `xml:"date,omitempty" json:"date,omitempty"`
 
 	Hour int32 `xml:"hour,omitempty" json:"hour,omitempty"`
 
@@ -3696,7 +3696,7 @@ type DateTimeValue struct {
 	//
 	// The {@code DateTime} value.
 	//
-	Value soap.XSDDateTime `xml:"value,omitempty" json:"value,omitempty"`
+	Value *DateTime `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type DateValue struct {
@@ -3704,7 +3704,7 @@ type DateValue struct {
 	//
 	// The {@code Date} value.
 	//
-	Value soap.XSDDate `xml:"value,omitempty" json:"value,omitempty"`
+	Value *Date `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type DeactivateCreatives struct {
@@ -4269,13 +4269,13 @@ type SetTopBoxCreative struct {
 	// The date and time that this creative can begin serving from a local cable video-on-demand
 	// server. This attribute is optional.
 	//
-	LicenseWindowStartDateTime soap.XSDDateTime `xml:"licenseWindowStartDateTime,omitempty" json:"licenseWindowStartDateTime,omitempty"`
+	LicenseWindowStartDateTime *DateTime `xml:"licenseWindowStartDateTime,omitempty" json:"licenseWindowStartDateTime,omitempty"`
 
 	//
 	// The date and time that this creative can no longer be served from a local cable video-on-demand
 	// server. This attribute is optional.
 	//
-	LicenseWindowEndDateTime soap.XSDDateTime `xml:"licenseWindowEndDateTime,omitempty" json:"licenseWindowEndDateTime,omitempty"`
+	LicenseWindowEndDateTime *DateTime `xml:"licenseWindowEndDateTime,omitempty" json:"licenseWindowEndDateTime,omitempty"`
 }
 
 type SetTopBoxCreativeError struct {

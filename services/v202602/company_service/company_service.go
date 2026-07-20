@@ -815,18 +815,6 @@ const (
 
 	InventoryClientApiError_ReasonADSENSE_RPC_ERROR InventoryClientApiError_Reason = "ADSENSE_RPC_ERROR"
 
-	InventoryClientApiError_ReasonDOMAIN_NO_SCHEME InventoryClientApiError_Reason = "DOMAIN_NO_SCHEME"
-
-	InventoryClientApiError_ReasonDOMAIN_INVALID_HOST InventoryClientApiError_Reason = "DOMAIN_INVALID_HOST"
-
-	InventoryClientApiError_ReasonDOMAIN_INVALID_TLD InventoryClientApiError_Reason = "DOMAIN_INVALID_TLD"
-
-	InventoryClientApiError_ReasonDOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX InventoryClientApiError_Reason = "DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX"
-
-	InventoryClientApiError_ReasonDOMAIN_INVALID_INPUT InventoryClientApiError_Reason = "DOMAIN_INVALID_INPUT"
-
-	InventoryClientApiError_ReasonDOMAIN_NO_PUBLIC_SUFFIX InventoryClientApiError_Reason = "DOMAIN_NO_PUBLIC_SUFFIX"
-
 	InventoryClientApiError_ReasonUNKNOWN_ERROR InventoryClientApiError_Reason = "UNKNOWN_ERROR"
 )
 
@@ -1850,7 +1838,7 @@ type Company struct {
 	//
 	// The date and time this company was last modified.
 	//
-	LastModifiedDateTime soap.XSDDateTime `xml:"lastModifiedDateTime,omitempty" json:"lastModifiedDateTime,omitempty"`
+	LastModifiedDateTime *DateTime `xml:"lastModifiedDateTime,omitempty" json:"lastModifiedDateTime,omitempty"`
 
 	//
 	// Info required for when Company Type is CHILD_PUBLISHER.
@@ -1924,7 +1912,7 @@ type Date struct {
 }
 
 type DateTime struct {
-	Date soap.XSDDate `xml:"date,omitempty" json:"date,omitempty"`
+	Date *Date `xml:"date,omitempty" json:"date,omitempty"`
 
 	Hour int32 `xml:"hour,omitempty" json:"hour,omitempty"`
 
@@ -1940,7 +1928,7 @@ type DateTimeValue struct {
 	//
 	// The {@code DateTime} value.
 	//
-	Value soap.XSDDateTime `xml:"value,omitempty" json:"value,omitempty"`
+	Value *DateTime `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type DateValue struct {
@@ -1948,7 +1936,7 @@ type DateValue struct {
 	//
 	// The {@code Date} value.
 	//
-	Value soap.XSDDate `xml:"value,omitempty" json:"value,omitempty"`
+	Value *Date `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type ReInviteAction struct {
