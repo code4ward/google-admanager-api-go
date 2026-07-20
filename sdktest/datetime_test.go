@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	li "github.com/jfrconley/google-admanager-api-go/services/v202602/line_item_service"
+	li "github.com/code4ward/google-admanager-api-go/services/v202602/line_item_service"
 )
 
 // flatDateTimeText matches a startDateTime/endDateTime element whose content

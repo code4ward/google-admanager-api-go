@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	cs "github.com/jfrconley/google-admanager-api-go/services/v202602/company_service"
+	cs "github.com/code4ward/google-admanager-api-go/services/v202602/company_service"
 )
 
 // TestStatementQueryMarshals confirms the PQL Statement wire shape used by

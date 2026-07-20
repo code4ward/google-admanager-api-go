@@ -38,9 +38,9 @@ import (
     "fmt"
     "log"
 
-    admanager "github.com/jfrconley/google-admanager-api-go"
-    v202505 "github.com/jfrconley/google-admanager-api-go/services/v202505"
-    "github.com/jfrconley/google-admanager-api-go/services/v202505/network_service"
+    admanager "github.com/code4ward/google-admanager-api-go"
+    v202505 "github.com/code4ward/google-admanager-api-go/services/v202505"
+    "github.com/code4ward/google-admanager-api-go/services/v202505/network_service"
 )
 
 func main() {
@@ -92,7 +92,7 @@ ts := admanager.StaticTokenSource("ya29.xxxxx")
 The version package exports a constructor for every service. Each returns the corresponding generated interface:
 
 ```go
-import v202505 "github.com/jfrconley/google-admanager-api-go/services/v202505"
+import v202505 "github.com/code4ward/google-admanager-api-go/services/v202505"
 
 orderSvc := v202505.NewOrderService(client)
 networkSvc := v202505.NewNetworkService(client)
@@ -102,7 +102,7 @@ lineItemSvc := v202505.NewLineItemService(client)
 You still import the individual service package when you need its request/response types:
 
 ```go
-import "github.com/jfrconley/google-admanager-api-go/services/v202505/order_service"
+import "github.com/code4ward/google-admanager-api-go/services/v202505/order_service"
 
 resp, err := orderSvc.GetOrdersByStatement(&order_service.GetOrdersByStatement{
     FilterStatement: &order_service.Statement{Query: "LIMIT 10"},

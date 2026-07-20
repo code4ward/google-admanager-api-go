@@ -11,7 +11,7 @@ import (
 	"strings"
 	"testing"
 
-	li "github.com/jfrconley/google-admanager-api-go/services/v202602/line_item_service"
+	li "github.com/code4ward/google-admanager-api-go/services/v202602/line_item_service"
 )
 
 func marshal(t *testing.T, v any) string {
