@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Go module name — must match go.mod
-MODULE="github.com/jfrconley/google-admanager-api-go"
+MODULE="github.com/code4ward/google-admanager-api-go"
 
 # ---------- Configuration ----------
 # Add or remove versions / services here.

@@ -1,4 +1,4 @@
-module github.com/jfrconley/google-admanager-api-go
+module github.com/code4ward/google-admanager-api-go
 
 go 1.26
 
