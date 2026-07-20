@@ -1999,7 +1999,7 @@ type Date struct {
 }
 
 type DateTime struct {
-	Date soap.XSDDate `xml:"date,omitempty" json:"date,omitempty"`
+	Date *Date `xml:"date,omitempty" json:"date,omitempty"`
 
 	Hour int32 `xml:"hour,omitempty" json:"hour,omitempty"`
 
@@ -2017,14 +2017,14 @@ type DateTimeRange struct {
 	// lower bound on the date time range. If this field is not set then {@code endDateTime} must be
 	// specified.
 	//
-	StartDateTime soap.XSDDateTime `xml:"startDateTime,omitempty" json:"startDateTime,omitempty"`
+	StartDateTime *DateTime `xml:"startDateTime,omitempty" json:"startDateTime,omitempty"`
 
 	//
 	// The end date time of this range. This field is optional and if it is not set then there is no
 	// upper bound on the date time range. If this field is not set then {@code startDateTime} must be
 	// specified.
 	//
-	EndDateTime soap.XSDDateTime `xml:"endDateTime,omitempty" json:"endDateTime,omitempty"`
+	EndDateTime *DateTime `xml:"endDateTime,omitempty" json:"endDateTime,omitempty"`
 }
 
 type DateTimeRangeTargeting struct {
@@ -2036,7 +2036,7 @@ type DateTimeValue struct {
 	//
 	// The {@code DateTime} value.
 	//
-	Value soap.XSDDateTime `xml:"value,omitempty" json:"value,omitempty"`
+	Value *DateTime `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type DateValue struct {
@@ -2044,7 +2044,7 @@ type DateValue struct {
 	//
 	// The {@code Date} value.
 	//
-	Value soap.XSDDate `xml:"value,omitempty" json:"value,omitempty"`
+	Value *Date `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type DayPart struct {

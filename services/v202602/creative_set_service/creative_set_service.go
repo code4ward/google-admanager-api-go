@@ -1769,7 +1769,7 @@ type CreativeSet struct {
 	//
 	// The date and time this creative set was last modified.
 	//
-	LastModifiedDateTime soap.XSDDateTime `xml:"lastModifiedDateTime,omitempty" json:"lastModifiedDateTime,omitempty"`
+	LastModifiedDateTime *DateTime `xml:"lastModifiedDateTime,omitempty" json:"lastModifiedDateTime,omitempty"`
 }
 
 type CreativeSetError struct {
@@ -1854,7 +1854,7 @@ type Date struct {
 }
 
 type DateTime struct {
-	Date soap.XSDDate `xml:"date,omitempty" json:"date,omitempty"`
+	Date *Date `xml:"date,omitempty" json:"date,omitempty"`
 
 	Hour int32 `xml:"hour,omitempty" json:"hour,omitempty"`
 
@@ -1870,7 +1870,7 @@ type DateTimeValue struct {
 	//
 	// The {@code DateTime} value.
 	//
-	Value soap.XSDDateTime `xml:"value,omitempty" json:"value,omitempty"`
+	Value *DateTime `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type DateValue struct {
@@ -1878,7 +1878,7 @@ type DateValue struct {
 	//
 	// The {@code Date} value.
 	//
-	Value soap.XSDDate `xml:"value,omitempty" json:"value,omitempty"`
+	Value *Date `xml:"value,omitempty" json:"value,omitempty"`
 }
 
 type EntityLimitReachedError struct {

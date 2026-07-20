@@ -341,18 +341,6 @@ const (
 
 	InventoryClientApiError_ReasonADSENSE_RPC_ERROR InventoryClientApiError_Reason = "ADSENSE_RPC_ERROR"
 
-	InventoryClientApiError_ReasonDOMAIN_NO_SCHEME InventoryClientApiError_Reason = "DOMAIN_NO_SCHEME"
-
-	InventoryClientApiError_ReasonDOMAIN_INVALID_HOST InventoryClientApiError_Reason = "DOMAIN_INVALID_HOST"
-
-	InventoryClientApiError_ReasonDOMAIN_INVALID_TLD InventoryClientApiError_Reason = "DOMAIN_INVALID_TLD"
-
-	InventoryClientApiError_ReasonDOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX InventoryClientApiError_Reason = "DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX"
-
-	InventoryClientApiError_ReasonDOMAIN_INVALID_INPUT InventoryClientApiError_Reason = "DOMAIN_INVALID_INPUT"
-
-	InventoryClientApiError_ReasonDOMAIN_NO_PUBLIC_SUFFIX InventoryClientApiError_Reason = "DOMAIN_NO_PUBLIC_SUFFIX"
-
 	InventoryClientApiError_ReasonUNKNOWN_ERROR InventoryClientApiError_Reason = "UNKNOWN_ERROR"
 )
 
@@ -749,8 +737,7 @@ const (
 	RequestError_ReasonINVALID_INPUT RequestError_Reason = "INVALID_INPUT"
 
 	//
-	// The api version in the request has been discontinued. Please update
-	// to the new AdWords API version.
+	// The api version in the request has been discontinued. Please update to a newer API version.
 	//
 	RequestError_ReasonUNSUPPORTED_VERSION RequestError_Reason = "UNSUPPORTED_VERSION"
 )

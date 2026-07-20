@@ -53,8 +53,30 @@ ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 # The base Value type is always an empty struct, so dropping the embed is safe.
 fix_embedded_conflicts() {
   local file="$1"
-  sed -i '/^\t\*Value$/d' "$file"
+  # perl -i (not `sed -i`) for portability: BSD sed requires an extension arg
+  # after -i and does not treat \t as a tab, so `sed -i '/^\t\*Value$/d'` fails
+  # on macOS. perl's -i and \t behave identically on macOS and Linux.
+  perl -i -ne 'print unless /^\t\*Value$/' "$file"
   echo "  Fixed embedded *Value conflicts in $(basename "$file")"
+}
+
+# Retype GAM's DateTime/Date fields from the flat scalars gowsdl emits
+# (soap.XSDDateTime / soap.XSDDate) to the generated element-only complex
+# structs (*DateTime / *Date). GAM's WSDL declares these as complexTypes, but
+# gowsdl maps them to xsd scalars; the live SOAP endpoint then rejects the flat
+# wire shape with a "cvc-complex-type.2.3 ... element-only" fault. The complex
+# DateTime/Date structs ARE generated (just never referenced as field types),
+# so the retype is safe. Guarded on the struct existing in the file, so a
+# package that lacks the complex type is left untouched.
+# Verified against the live test network; regression-guarded by the sdktest
+# package (see /gam-p0-findings.md #1). Uses perl -i for the same BSD/GNU
+# portability reason as fix_embedded_conflicts above.
+fix_datetime_types() {
+  local file="$1"
+  grep -q '^type DateTime struct' "$file" && perl -i -pe 's/\bsoap\.XSDDateTime\b/*DateTime/g' "$file"
+  grep -q '^type Date struct' "$file" && perl -i -pe 's/\bsoap\.XSDDate\b/*Date/g' "$file"
+  gofmt -w "$file"
+  echo "  Retyped DateTime/Date fields to complex types in $(basename "$file")"
 }
 
 # ---------- Generate ----------
@@ -77,6 +99,7 @@ for version in "${VERSIONS[@]}"; do
     generated_file="${version_dir}/${pkg}/${pkg}.go"
     if [[ -f "${generated_file}" ]]; then
       fix_embedded_conflicts "${generated_file}"
+      fix_datetime_types "${generated_file}"
     fi
   done
 
