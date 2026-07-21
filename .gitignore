@@ -2,3 +2,7 @@
 .mcp.json
 .serena
 .claude
+
+# Binary left by an explicit `go build ./scripts/gen` (the generate flow uses
+# `go run`, which leaves nothing).
+/gen
