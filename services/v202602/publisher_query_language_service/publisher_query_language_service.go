@@ -2142,7 +2142,7 @@ type CustomCriteriaSet struct {
 	//
 	// The custom criteria. This attribute is required.
 	//
-	Children []*CustomCriteriaNode `xml:"children,omitempty" json:"children,omitempty"`
+	Children []CustomCriteriaChild `xml:"children,omitempty" json:"children,omitempty"`
 }
 
 type CmsMetadataCriteria struct {
